@@ -62,7 +62,7 @@ Without an endpoint the form runs in demo mode and simulates a successful send. 
 
 ## Deployment
 
-It's a static single-page app: deploy the `dist/` folder anywhere. Clean URLs such as `/contact` need a fallback to `index.html`. `public/_redirects` (Netlify) and `vercel.json` (Vercel) already handle this.
+It's a static single-page app: deploy the `dist/` folder anywhere. Clean URLs such as `/contact` need a fallback to `index.html`. `wrangler.jsonc` (Cloudflare Workers, `not_found_handling: single-page-application`) and `vercel.json` (Vercel) already handle this. Do not add a Netlify-style `_redirects` catch-all: Cloudflare rejects it as an infinite loop.
 
 ## Before handing over to the client
 
