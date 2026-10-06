@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" width="640" height="720">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#087443"/>
+      <stop offset="1" stop-color="#08110c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.14" r="0.55">
+      <stop offset="0" stop-color="#7fd3a3" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#7fd3a3" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.06"/>
+    </pattern>
+    <pattern id="ribs" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="4" height="10" fill="#000" fill-opacity="0.12"/>
+    </pattern>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#053d26"/>
+      <stop offset="1" stop-color="#08110c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="720" fill="url(#sky)"/>
+  <rect width="640" height="720" fill="url(#grid)"/>
+  <rect width="640" height="720" fill="url(#glow)"/>
+
+  <!-- Gantry crane -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="6" stroke-linejoin="round">
+    <path d="M90 520 V150 M190 520 V150"/>
+    <path d="M60 150 H560"/>
+    <path d="M90 230 L190 150 M190 230 L90 150" stroke-width="3" stroke-opacity="0.35"/>
+  </g>
+  <rect x="400" y="140" width="40" height="22" rx="3" fill="#ffffff" fill-opacity="0.75"/>
+  <path d="M420 162 V300" stroke="#ffffff" stroke-opacity="0.6" stroke-width="2"/>
+  <!-- Container on the hook -->
+  <g>
+    <rect x="360" y="300" width="120" height="54" rx="3" fill="#bef264"/>
+    <rect x="360" y="300" width="120" height="54" rx="3" fill="url(#ribs)"/>
+  </g>
+
+  <!-- Container stack -->
+  <g>
+    <rect x="70" y="466" width="150" height="54" rx="3" fill="#34b46f"/>
+    <rect x="70" y="466" width="150" height="54" rx="3" fill="url(#ribs)"/>
+    <rect x="228" y="466" width="150" height="54" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+    <rect x="228" y="466" width="150" height="54" rx="3" fill="url(#ribs)"/>
+    <rect x="386" y="466" width="150" height="54" rx="3" fill="#0e9455"/>
+    <rect x="386" y="466" width="150" height="54" rx="3" fill="url(#ribs)"/>
+
+    <rect x="150" y="406" width="150" height="54" rx="3" fill="#7fd3a3"/>
+    <rect x="150" y="406" width="150" height="54" rx="3" fill="url(#ribs)"/>
+    <rect x="308" y="406" width="150" height="54" rx="3" fill="#065f37"/>
+    <rect x="308" y="406" width="150" height="54" rx="3" fill="url(#ribs)"/>
+  </g>
+
+  <!-- Ship hull -->
+  <path d="M30 520 H610 L570 600 H70 Z" fill="#08110c"/>
+  <path d="M30 520 H610" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2"/>
+  <rect x="520" y="440" width="60" height="80" rx="4" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="530" y="452" width="40" height="10" rx="2" fill="#087443" fill-opacity="0.6"/>
+
+  <!-- Sea -->
+  <rect y="600" width="640" height="120" fill="url(#sea)"/>
+  <g stroke="#ffffff" stroke-opacity="0.12" stroke-width="2" stroke-linecap="round">
+    <path d="M40 630 H140 M220 650 H340 M420 628 H560 M100 680 H210 M360 690 H500"/>
+  </g>
+</svg>
