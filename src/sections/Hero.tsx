@@ -4,26 +4,25 @@ import { site } from "../data/site";
 import { ButtonLink } from "../components/Button";
 
 /**
- * Logo-green hero: tagline, big white headline and pill buttons on the left,
- * a faint reuse arrow behind, and the cut-out pile of stock across the bottom.
+ * Hero: tagline, big white headline and pill buttons over a softly blurred
+ * warehouse photo, with the cut-out pile of stock standing on the aisle floor.
  */
 export function Hero() {
   return (
-    <section id="home" className="relative isolate flex flex-col overflow-hidden bg-forest-700 pt-16 text-white lg:min-h-svh lg:pt-28">
-      {/* Soft light behind the pile so it doesn't sit on dead-flat colour */}
+    <section id="home" className="relative isolate flex flex-col overflow-hidden bg-forest-900 pt-16 text-white lg:min-h-svh lg:pt-28">
+      {/* Real backdrop: the warehouse aisle, softly out of focus like a product shot */}
+      <img
+        src={photos.warehouse.src}
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        className="absolute inset-0 -z-20 size-full scale-110 object-cover object-[50%_60%] blur-[3px]"
+      />
+      {/* Dark green shade at the top and left for the headline; clear towards the bottom so the toys sit in daylight */}
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-[radial-gradient(60%_70%_at_50%_100%,rgb(185_221_132/0.28),transparent_70%)]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(18_58_33/0.92)_0%,rgb(18_58_33/0.7)_40%,rgb(18_58_33/0.15)_75%,rgb(18_58_33/0)_100%)] lg:bg-[linear-gradient(100deg,rgb(18_58_33/0.94)_0%,rgb(18_58_33/0.78)_38%,rgb(18_58_33/0.25)_70%,rgb(18_58_33/0.1)_100%)]"
       />
-      {/* Faint reuse arrow, echoing the one under the logo's container */}
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 600 300"
-        className="absolute top-[18%] right-[-6rem] -z-10 hidden w-[44rem] text-[#B9DD84] opacity-[0.13] lg:block"
-      >
-        <path d="M560 40A270 120 0 1 1 90 70" fill="none" stroke="currentColor" strokeWidth="14" strokeLinecap="round" />
-        <path d="M60 30 110 92 34 104Z" fill="currentColor" />
-      </svg>
 
       <div className="container-page pt-12 sm:pt-16 lg:pt-20">
         <div className="max-w-4xl">
@@ -48,6 +47,7 @@ export function Hero() {
 
       {/* Wall of stock across the full width; wider than the screen on phones */}
       <div aria-hidden="true" className="relative mt-auto -mb-px pt-10 lg:-mt-6">
+        <div className="absolute inset-x-[4%] bottom-[2%] h-1/4 rounded-[50%] bg-black/45 blur-2xl" />
         <img
           src={photos.heroPile.src}
           srcSet={`${photos.heroPile.srcSmall} 1200w, ${photos.heroPile.src} 2400w`}
