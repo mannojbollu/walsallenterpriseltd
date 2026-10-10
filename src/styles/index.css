@@ -149,7 +149,7 @@
   }
   @media (width >= 64rem) {
     section[id] {
-      scroll-margin-top: 6.25rem;
+      scroll-margin-top: 7rem;
     }
   }
   ::selection {

@@ -17,18 +17,21 @@ import softToysImg from "../assets/photos/soft-toys.webp";
 import beddingImg from "../assets/photos/bedding.webp";
 import booksImg from "../assets/photos/books.webp";
 import mixedImg from "../assets/photos/mixed-load.webp";
+import heroPileImg from "../assets/photos/hero-pile.webp";
+import heroPileSmallImg from "../assets/photos/hero-pile-1200.webp";
 
 export const photos = {
-  hero: { src: mixedImg, alt: "Second-hand clocks, cameras, cases and household goods laid out for sale" },
+  /** Generated cut-out (transparent background) of toys, books, bedding and crockery for the hero. */
+  heroPile: { src: heroPileImg, srcSmall: heroPileSmallImg },
   warehouse: { src: warehouseImg, alt: "Warehouse aisle with racked stock and a reach truck" },
   boxes: { src: boxesImg, alt: "Open cardboard cartons ready for packing" },
 };
 
 export const hero = {
-  eyebrow: "Wholesale · Walsall, UK",
-  title: "Quality second-hand goods, sold wholesale by the kilo.",
+  eyebrow: "We sell second-hand goods wholesale",
+  title: "Supplier of toys, bric-a-brac, bedding and books.",
   intro:
-    "Bric-a-brac, hard and soft toys, bedding and books, sorted and packed in Walsall for importers and wholesalers overseas.",
+    "Sorted and packed in Walsall, UK, and sold by the kilo to importers and wholesalers overseas.",
   primaryCta: { label: "View our products", href: "/#products" },
 };
 
