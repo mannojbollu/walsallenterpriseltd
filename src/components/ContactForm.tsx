@@ -20,12 +20,11 @@ const empty: ContactPayload = {
   message: "",
 };
 
-// TODO(client): keep in step with the terms they actually quote.
+// Terms confirmed by the client: EXW, FOB, CFR. Keep in step with `hero.facts` in src/data/content.ts.
 const incoterms = [
   { value: "EXW", label: "EXW – Ex Works Walsall" },
   { value: "FOB", label: "FOB – Free On Board, UK port" },
   { value: "CFR", label: "CFR – Cost and Freight, port of discharge" },
-  { value: "CIF", label: "CIF – Cost, Insurance and Freight" },
   { value: "Unsure", label: "Not sure yet – advise me" },
 ];
 

@@ -49,16 +49,16 @@ Motion is deliberate and limited: slow push-in on hero photos, manifest rows pri
 
 ### Commodities, process, ports
 
-Edit the `commodities`, `processSteps`, `documents` and `ports` arrays in `src/data/content.ts`. Tables, line numbers, the contact form's commodity dropdown and footer links update automatically. Search the file for `TODO(client)` to find figures that still need confirming.
+Edit the `commodities`, `processSteps`, `documents` and `ports` (destination regions) arrays in `src/data/content.ts`. Tables, line numbers, the contact form's commodity dropdown and footer links update automatically. Search the file for `TODO(client)` to find figures that still need confirming.
 
 ### Contact form
 
 The form validates input client-side and shows loading, success and error states. To connect a backend:
 
-1. Copy `.env.example` to `.env`.
-2. Set `VITE_CONTACT_ENDPOINT` to a URL that accepts a JSON `POST` (e.g. a Formspree form endpoint or your own API).
+1. Get a Web3Forms access key at https://web3forms.com for walsallenterpriseltd@gmail.com.
+2. Put it in `.env.production` as `VITE_WEB3FORMS_ACCESS_KEY=...` (the key is public by design, so this file is committed). Alternatively set `VITE_CONTACT_ENDPOINT` to any URL that accepts a JSON `POST`, such as a Formspree endpoint.
 
-Without an endpoint the form runs in demo mode and simulates a successful send. For any other provider, replace the body of `submitContact()` in `src/lib/contactService.ts`.
+With neither set, the dev server simulates a successful send and production builds show an error asking visitors to email or WhatsApp instead. For any other provider, replace the body of `submitContact()` in `src/lib/contactService.ts`.
 
 ## Deployment
 
@@ -70,10 +70,7 @@ Already set: company name, phone, WhatsApp, email, address, hours (Mon–Fri 09:
 
 Still placeholder:
 
-- [ ] Incoterms offered, UK loading port(s), order-to-loading lead time, payment terms (`TODO(client)` in `src/data/content.ts`, plus the Incoterm list in `src/components/ContactForm.tsx`)
-- [ ] Typical gross weight per mixed 40' HC (`facts` in `src/data/content.ts`)
-- [ ] Port matrix transit times and import notes: check with the client's forwarder (`ports` in `src/data/content.ts`)
-- [ ] Real logo, if the client has one (`src/components/Logo.tsx`, `public/favicon.svg`)
-- [ ] Domain: replace `www.example.com` in `src/data/site.ts`, `index.html` (meta tags and the business JSON-LD), `public/sitemap.xml`, `public/robots.txt`
-- [ ] Privacy policy and terms (`src/pages/LegalPage.tsx`)
-- [ ] Connect the contact form (`VITE_CONTACT_ENDPOINT` in `.env`)
+- [x] Commercial terms confirmed: Incoterms confirmed as EXW, FOB, CFR; loading port removed until confirmed; 15 days from deposit to collection; 50% deposit, balance before collection.
+- [ ] Custom domain, if one is connected: replace the workers.dev URL in `src/data/site.ts`, `index.html` (meta tags and the business JSON-LD), `public/sitemap.xml`, `public/robots.txt`
+- [ ] Client to review the privacy policy and terms (`src/pages/LegalPage.tsx`)
+- [ ] Web3Forms access key in `.env.production`

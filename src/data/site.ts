@@ -17,7 +17,7 @@ export const site = {
     "Walsall Enterprise Ltd sorts, grades and packs used bric-a-brac, toys, bedding and books in Walsall, UK, and ships them as full container loads to importers in the Philippines, Thailand, Pakistan, Europe and Africa. Priced per kg.",
 
   /** Public URL of the deployed site, used for canonical and Open Graph URLs. */
-  url: "https://www.example.com",
+  url: "https://walsallenterpriseltd.walsall-enterprise-ltd.workers.dev",
   /** Social share image. 1200x630 image in /public. */
   ogImage: "/og-image.jpg",
   locale: "en_GB",
@@ -40,6 +40,8 @@ export const site = {
       { days: "Sat – Sun", time: "Closed" },
     ],
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Unit+2+Smith+Road+Walsall+WS10+0PD",
+    /** Keyless Google Maps embed for the Contact page. */
+    mapEmbedUrl: "https://www.google.com/maps?q=Unit+2+Smith+Road,+Walsall+WS10+0PD&output=embed",
   },
 
   /**
@@ -51,7 +53,7 @@ export const site = {
     { label: "Reuse", href: "/#reuse" },
     { label: "Commodities", href: "/#commodities" },
     { label: "Process", href: "/#process" },
-    { label: "Ports", href: "/#ports" },
+    { label: "Destinations", href: "/#ports" },
     { label: "FAQ", href: "/#faq" },
     { label: "Contact", href: "/contact" },
   ],

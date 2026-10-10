@@ -42,7 +42,6 @@ export const hero = {
   intro:
     "We collect, sort and grade bric-a-brac, toys, bedding and books that still have years of use in them, then load them for importers in the Philippines, Thailand, Pakistan, Europe and Africa. Sold per kilo, documented line by line.",
   primaryCta: { label: "Request price list", href: "/contact" },
-  // TODO(client): confirm the Incoterms offered.
   facts: [
     { label: "Minimum order", value: "1 × 40' HC (FCL)" },
     { label: "Terms", value: "EXW · FOB · CFR" },
@@ -50,16 +49,16 @@ export const hero = {
   ],
 };
 
-/** Lanes shown on the scrolling board under the hero. Typical routings, not a live schedule. */
+/** Lanes shown on the scrolling board under the hero. Destinations the client has shipped to, not a live schedule. */
 export const lanes = [
-  { from: "GBFXT", to: "PKKHI", eq: "40' HC", cargo: "Mixed load" },
-  { from: "GBFXT", to: "PHMNL", eq: "40' HC", cargo: "Hard toys / Books" },
-  { from: "GBSOU", to: "THLCH", eq: "40' HC", cargo: "Bric-a-brac" },
-  { from: "GBFXT", to: "GHTEM", eq: "40' HC", cargo: "Bedding & linen" },
-  { from: "GBFXT", to: "NLRTM", eq: "40' HC", cargo: "Books" },
-  { from: "GBSOU", to: "KEMBA", eq: "40' HC", cargo: "Soft toys / Bric-a-brac" },
-  { from: "GBFXT", to: "PHCEB", eq: "40' HC", cargo: "Mixed load" },
-  { from: "GBFXT", to: "PKBQM", eq: "40' HC", cargo: "Bedding & linen" },
+  { from: "WALSALL", to: "PAKISTAN", eq: "40' HC", cargo: "Mixed load" },
+  { from: "WALSALL", to: "PHILIPPINES", eq: "40' HC", cargo: "Hard toys / Books" },
+  { from: "WALSALL", to: "THAILAND", eq: "40' HC", cargo: "Bric-a-brac" },
+  { from: "WALSALL", to: "WEST AFRICA", eq: "40' HC", cargo: "Bedding & linen" },
+  { from: "WALSALL", to: "EUROPE", eq: "40' HC", cargo: "Books" },
+  { from: "WALSALL", to: "EAST AFRICA", eq: "40' HC", cargo: "Soft toys / Bric-a-brac" },
+  { from: "WALSALL", to: "PHILIPPINES", eq: "40' HC", cargo: "Mixed load" },
+  { from: "WALSALL", to: "PAKISTAN", eq: "40' HC", cargo: "Bedding & linen" },
 ];
 
 export const operations = {
@@ -69,7 +68,6 @@ export const operations = {
     "Stock arrives from UK collection partners, is sorted by commodity and graded for resale, then packed into cartons, sacks or bales and weighed before loading. Every container is stuffed at our bay in Walsall, so we control what goes in and can document it line by line.",
     "We sell by the full 40' high-cube only, which keeps freight per kilo low for the buyer. Mixed loads are built to the ratio you specify, and the packing list shows commodity, packing type, package count and net weight for each line.",
   ],
-  // TODO(client): confirm terms, loading ports, lead time and payment terms.
   spec: [
     { label: "Facility", value: "Unit 2, Smith Road, Walsall WS10 0PD. Loading bays 1–3." },
     { label: "Equipment", value: "40' high-cube (40' HC)" },
@@ -77,9 +75,8 @@ export const operations = {
     { label: "Packing", value: "Cartons, sacks, compressed bales, bulk bags" },
     { label: "Pricing basis", value: "Per kg net weight, by commodity line" },
     { label: "Terms of sale", value: "EXW Walsall · FOB UK port · CFR destination port on request" },
-    { label: "Port of loading", value: "Felixstowe (GBFXT) or Southampton (GBSOU), by carrier" },
-    { label: "Order to loading", value: "Typically 2–3 weeks from deposit" },
-    { label: "Payment", value: "Deposit against pro-forma; balance before B/L release" },
+    { label: "Deposit to collection", value: "Container ready for collection 15 days after deposit" },
+    { label: "Payment", value: "50% deposit against pro-forma; balance before collection" },
   ],
   stamp: ["Sorted & graded", "Walsall", "WS10 0PD"],
   marketsLabel: "Current export destinations",
@@ -89,7 +86,7 @@ export const operations = {
 
 /**
  * Key figures strip. Keep to verifiable facts. Numeric values count up on scroll.
- * TODO(client): replace the weight range with their own average.
+ * Weight range (18–22 t) confirmed by the client.
  */
 export const facts: { value: string | number; suffix?: string; label: string }[] = [
   { value: 68, suffix: " m³", label: "Internal volume of a 40' high-cube" },
@@ -251,86 +248,15 @@ export const documents = [
 ];
 
 export const portsIntro = {
-  eyebrow: "05 / Port-of-entry matrix",
-  title: "Where our containers discharge.",
-  intro:
-    "Indicative port-to-port transit from UK East Coast ports. Actual times depend on the carrier, routing and transhipment.",
+  eyebrow: "05 / Destinations",
+  title: "Where our containers have gone.",
+  intro: "We have already shipped full container loads from Walsall to importers in these regions.",
   footnote:
     "Import rules change and vary by commodity. Confirm requirements with your customs broker before we load. We will not ship a line your market does not admit.",
 };
 
-/** TODO(client): review transit ranges and notes with their forwarder before go-live. */
-export const ports: {
-  region: string;
-  ports: { name: string; code: string }[];
-  transit: string;
-  /** [min, max] port-to-port days, drives the transit chart. */
-  days: [number, number];
-  check: string;
-}[] = [
-  {
-    region: "Philippines",
-    ports: [
-      { name: "Manila", code: "PHMNL" },
-      { name: "Cebu", code: "PHCEB" },
-    ],
-    transit: "35–45 days",
-    days: [35, 45],
-    check: "Used textiles are restricted. Confirm with the importer before including bedding & linen.",
-  },
-  {
-    region: "Thailand",
-    ports: [
-      { name: "Laem Chabang", code: "THLCH" },
-      { name: "Bangkok", code: "THBKK" },
-    ],
-    transit: "30–40 days",
-    days: [30, 40],
-    check: "Second-hand goods may need an import licence. Importer to confirm.",
-  },
-  {
-    region: "Pakistan",
-    ports: [
-      { name: "Karachi", code: "PKKHI" },
-      { name: "Port Qasim", code: "PKBQM" },
-    ],
-    transit: "25–35 days",
-    days: [25, 35],
-    check: "Used goods may require pre-shipment inspection. Importer to confirm.",
-  },
-  {
-    region: "Europe (EU)",
-    ports: [
-      { name: "Rotterdam", code: "NLRTM" },
-      { name: "Antwerp", code: "BEANR" },
-      { name: "Hamburg", code: "DEHAM" },
-    ],
-    transit: "2–5 days",
-    days: [2, 5],
-    check: "EORI numbers on both sides; import declaration on entry to the EU.",
-  },
-  {
-    region: "West Africa",
-    ports: [
-      { name: "Tema", code: "GHTEM" },
-      { name: "Lagos (Apapa)", code: "NGAPP" },
-      { name: "Lomé", code: "TGLFW" },
-    ],
-    transit: "18–28 days",
-    days: [18, 28],
-    check: "Cargo tracking note (e.g. ECTN) may be mandatory before loading. Confirm per country.",
-  },
-  {
-    region: "East Africa",
-    ports: [
-      { name: "Mombasa", code: "KEMBA" },
-      { name: "Dar es Salaam", code: "TZDAR" },
-    ],
-    transit: "28–38 days",
-    days: [28, 38],
-    check: "Pre-export verification of conformity may apply. Confirm per country.",
-  },
-];
+/** Regions the client has exported to (confirmed by the client). */
+export const ports = ["Philippines", "Thailand", "Pakistan", "Europe", "West Africa", "East Africa"];
 
 export const galleryIntro = {
   eyebrow: "From the floor",
@@ -352,7 +278,6 @@ export const faqIntro = {
   intro: "Anything not covered here, ask on WhatsApp or through the enquiry form.",
 };
 
-/** TODO(client): confirm the payment and lead-time answers, which repeat the placeholders above. */
 export const faqs = [
   {
     q: "What is the minimum order?",
@@ -372,11 +297,11 @@ export const faqs = [
   },
   {
     q: "How do I pay?",
-    a: "A deposit against our pro-forma invoice, with the balance due before the bill of lading is released to you.",
+    a: "A 50% deposit against our pro-forma invoice. The remaining 50% is due before the container is collected from Walsall.",
   },
   {
-    q: "How long from order to loading?",
-    a: "Typically 2–3 weeks from deposit to loading in Walsall, then port-to-port transit. See the port matrix above for typical transit times.",
+    q: "How long from order to collection?",
+    a: "Your container is ready for collection in Walsall 15 days after we receive your deposit.",
   },
   {
     q: "Which documents will I receive?",

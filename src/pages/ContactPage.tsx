@@ -78,6 +78,13 @@ export default function ContactPage() {
                   >
                     Directions →
                   </a>
+                  <iframe
+                    src={contact.mapEmbedUrl}
+                    title={`Map showing ${contact.address[0]}, ${contact.address[2]}`}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="mt-4 aspect-[4/3] w-full sm:aspect-video lg:aspect-[4/3] border border-steel-300 bg-steel-100"
+                  />
                 </Detail>
               </dl>
             </aside>

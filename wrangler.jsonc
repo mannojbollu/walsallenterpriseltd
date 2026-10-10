@@ -4,6 +4,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "walsallenterpriseltd",
+  // The "walsall enterprise ltd" Cloudflare account. Pinned because the login can see other accounts.
+  "account_id": "ef58daa13a458b520f494d4e7a012705",
   "compatibility_date": "2026-10-01",
   // Build the site before every `wrangler deploy`, so dist/ always exists.
   "build": {

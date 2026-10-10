@@ -3,21 +3,28 @@ import { site } from "../data/site";
 type Props = { tone?: "light" | "dark"; className?: string };
 
 /**
- * Placeholder logo: a container-door mark plus the company name from site.ts.
- * To use a real logo, replace the <svg> (or the whole component) with
- * <img src={logoUrl} alt={site.name} />. Keep public/favicon.svg in step.
+ * Logo: a recycle-arrows mark (three chasing arrows) plus the company name from site.ts.
+ * Each arrow is one arc with its head, repeated at 120° turns. Keep public/favicon.svg in step.
  */
+const ARROW = (
+  <>
+    <path d="M17.56 7.14A9 9 0 0 1 24.86 17.56" fill="none" strokeWidth="2.75" />
+    <path d="M28.1 18.1 23.6 21.1 21.6 16.9Z" stroke="none" />
+  </>
+);
+
 export function Logo({ tone = "dark", className = "" }: Props) {
   const light = tone === "light";
   return (
     <span className={`inline-flex items-center gap-3 ${className}`}>
-      <svg viewBox="0 0 32 32" className="size-9 shrink-0" aria-hidden="true">
-        <rect width="32" height="32" className={light ? "fill-white" : "fill-navy-900"} />
-        <g fill="none" strokeWidth="1.75" className={light ? "stroke-navy-900" : "stroke-white"}>
-          <rect x="7" y="7" width="18" height="15" />
-          <path d="M11.5 7v15M16 7v15M20.5 7v15" />
-        </g>
-        <rect x="7" y="24" width="18" height="2.5" className="fill-moss-500" />
+      <svg
+        viewBox="0 0 32 32"
+        className={`size-9 shrink-0 ${light ? "fill-moss-400 stroke-moss-400" : "fill-moss-600 stroke-moss-600"}`}
+        aria-hidden="true"
+      >
+        <g>{ARROW}</g>
+        <g transform="rotate(120 16 16)">{ARROW}</g>
+        <g transform="rotate(240 16 16)">{ARROW}</g>
       </svg>
       <span className="flex flex-col leading-none">
         <span
