@@ -2,18 +2,20 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import { SmartLink } from "./SmartLink";
 
-type Variant = "primary" | "secondary" | "light" | "outline" | "outline-light" | "ghost";
+type Variant = "primary" | "secondary" | "light" | "leaf" | "outline" | "outline-light" | "ghost";
 type Size = "md" | "lg";
 
 const base =
-  "group inline-flex items-center justify-center gap-2 rounded-md font-semibold whitespace-nowrap transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
+  "group inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   primary: "bg-moss-600 text-white hover:bg-moss-700 focus-visible:outline-moss-600",
   secondary: "bg-forest-900 text-white hover:bg-forest-800 focus-visible:outline-forest-900",
   light: "bg-white text-forest-900 hover:bg-steel-100 focus-visible:outline-white",
+  /** Light leaf green from the logo's container, for use on dark green. */
+  leaf: "bg-[#B9DD84] text-forest-900 hover:bg-white focus-visible:outline-white",
   outline: "border border-forest-900 text-forest-900 hover:bg-forest-900 hover:text-white focus-visible:outline-forest-900",
-  "outline-light": "border border-white/40 text-white hover:border-white hover:bg-white/5 focus-visible:outline-white",
+  "outline-light": "border-2 border-white text-white hover:bg-white hover:text-forest-900 focus-visible:outline-white",
   ghost: "text-forest-800 hover:text-moss-700 px-0! focus-visible:outline-moss-600",
 };
 

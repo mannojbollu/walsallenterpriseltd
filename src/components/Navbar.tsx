@@ -26,15 +26,15 @@ export function Navbar() {
   const isActive = (href: string) => !href.includes("#") && location.pathname === href;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-forest-900 text-white">
-      <nav aria-label="Main" className="container-page flex h-16 items-center justify-between lg:h-24">
+    <header className="fixed inset-x-0 top-0 z-50 bg-forest-700 text-white">
+      <nav aria-label="Main" className="container-page flex h-16 items-center justify-between lg:h-28">
         <SmartLink href="/" aria-label={`${site.name} home`} className="shrink-0">
-          <Logo tone="light" className="lg:[&>svg]:h-12" />
+          <Logo tone="light" className="lg:[&>svg]:h-14" />
         </SmartLink>
 
         {/* Desktop: big contact line on top, menu and CTA underneath */}
         <div className="hidden flex-col items-end gap-2 lg:flex">
-          <div className="flex items-center gap-6 text-[0.95rem] font-medium text-forest-100">
+          <div className="flex items-center gap-6 text-lg font-semibold">
             <a href={`tel:${site.contact.phoneHref}`} className="inline-flex items-center gap-2 hover:text-[#C8E6A0]">
               <Phone aria-hidden="true" className="size-5" />
               {site.contact.phone}
@@ -53,7 +53,7 @@ export function Navbar() {
                     <SmartLink
                       href={item.href}
                       aria-current={active ? "page" : undefined}
-                      className={`px-3 py-2 text-[0.95rem] font-medium transition-colors xl:px-4 ${
+                      className={`px-3 py-2 text-[0.8rem] font-bold tracking-[0.06em] uppercase transition-colors xl:px-4 ${
                         active ? "text-[#C8E6A0]" : "text-white hover:text-[#C8E6A0]"
                       }`}
                     >
@@ -63,7 +63,7 @@ export function Navbar() {
                 );
               })}
             </ul>
-            <ButtonLink href={site.headerCta.href} variant="light" arrow>
+            <ButtonLink href={site.headerCta.href} variant="leaf" arrow className="ml-2">
               {site.headerCta.label}
             </ButtonLink>
           </div>

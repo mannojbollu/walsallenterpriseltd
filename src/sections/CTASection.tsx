@@ -11,13 +11,13 @@ export function CTASection() {
     <section aria-labelledby="cta-title" className="bg-forest-900 py-16 text-white sm:py-20">
       <Reveal className="container-page flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-xl">
-          <h2 id="cta-title" className="text-3xl font-bold text-white sm:text-4xl">
+          <h2 id="cta-title" className="text-3xl font-extrabold text-white sm:text-5xl">
             {ctaBand.title}
           </h2>
           <p className="mt-3 text-lg leading-relaxed text-forest-100">{ctaBand.intro}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <ButtonLink href={ctaBand.primaryCta.href} variant="light" size="lg" arrow>
+          <ButtonLink href={ctaBand.primaryCta.href} variant="leaf" size="lg" arrow>
             {ctaBand.primaryCta.label}
           </ButtonLink>
           <ButtonLink href={site.contact.whatsappHref} variant="outline-light" size="lg">

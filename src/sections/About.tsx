@@ -1,6 +1,7 @@
 import { about, photos } from "../data/content";
 import { site } from "../data/site";
 import { Reveal } from "../components/Reveal";
+import { SectionTitle } from "../components/SectionTitle";
 
 export function About() {
   const { contact } = site;
@@ -16,11 +17,11 @@ export function About() {
             height={1859}
             loading="lazy"
             decoding="async"
-            className="photo aspect-[4/3] w-full rounded lg:absolute lg:inset-0 lg:aspect-auto lg:size-full"
+            className="photo aspect-[4/3] w-full rounded-xl lg:absolute lg:inset-0 lg:aspect-auto lg:size-full"
           />
         </Reveal>
         <Reveal delay={100} className="lg:col-span-7">
-          <h2 className="text-4xl font-bold sm:text-5xl">{about.title}</h2>
+          <SectionTitle eyebrow={about.eyebrow} title={about.title} />
           {about.paragraphs.map((p, i) => (
             <p key={i} className="mt-5 max-w-3xl text-lg leading-relaxed text-steel-600">
               {p}

@@ -17,25 +17,20 @@ import softToysImg from "../assets/photos/soft-toys.webp";
 import beddingImg from "../assets/photos/bedding.webp";
 import booksImg from "../assets/photos/books.webp";
 import mixedImg from "../assets/photos/mixed-load.webp";
+import heroPileImg from "../assets/photos/hero-pile.webp";
+import heroPileSmallImg from "../assets/photos/hero-pile-1200.webp";
 
 export const photos = {
+  /** Generated cut-out (transparent background) of toys, books, bedding and crockery for the hero. */
+  heroPile: { src: heroPileImg, srcSmall: heroPileSmallImg },
   warehouse: { src: warehouseImg, alt: "Warehouse aisle with racked stock and a reach truck" },
   boxes: { src: boxesImg, alt: "Open cardboard cartons ready for packing" },
 };
 
 export const hero = {
-  eyebrow: "Wholesale second-hand goods from Walsall, UK",
+  eyebrow: "We sell second-hand goods wholesale",
   title: "Supplier of toys, bric-a-brac, bedding and books.",
-  intro:
-    "Sorted and packed in Walsall, UK, and sold by the kilo to importers and wholesalers overseas.",
   primaryCta: { label: "View our products", href: "/#products" },
-  /** Photo grid beside the headline. */
-  photos: [
-    { src: bricImg, alt: "Second-hand crockery, glassware and ornaments" },
-    { src: hardToysImg, alt: "Second-hand toy cars, robots and figures" },
-    { src: booksImg, alt: "Second-hand books stacked by category" },
-    { src: beddingImg, alt: "Stack of folded towels" },
-  ],
 };
 
 export type Product = {
@@ -46,6 +41,7 @@ export type Product = {
 };
 
 export const productsIntro = {
+  eyebrow: "Our products",
   title: "What we sell",
   intro: "Buy a single line or mix them in one container to the ratio you want. Everything is priced per kilogram.",
 };
@@ -90,6 +86,7 @@ export const products: Product[] = [
 ];
 
 export const howToBuy = {
+  eyebrow: "Simple terms",
   title: "How to buy",
   steps: [
     { title: "Send an enquiry", body: "Tell us the product lines you want. We reply within one business day with per-kg prices." },
@@ -105,6 +102,7 @@ export const howToBuy = {
 };
 
 export const about = {
+  eyebrow: "Who we are",
   title: "About us",
   paragraphs: [
     "Walsall Enterprise Ltd collects household goods the UK no longer wants, sorts and checks them by hand at our warehouse in Walsall, and sells them on to buyers overseas. Every item resold is one that stays out of landfill.",
