@@ -6,7 +6,7 @@ type Variant = "primary" | "secondary" | "light" | "outline" | "outline-light" |
 type Size = "md" | "lg";
 
 const base =
-  "group inline-flex items-center justify-center gap-2 font-semibold whitespace-nowrap transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
+  "group inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   primary: "bg-moss-600 text-white hover:bg-moss-700 focus-visible:outline-moss-600",
@@ -18,8 +18,8 @@ const variants: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, string> = {
-  md: "h-10 px-4 text-sm",
-  lg: "h-12 px-6 text-[0.95rem]",
+  md: "h-10 px-5 text-sm",
+  lg: "h-12 px-7 text-[0.95rem]",
 };
 
 type CommonProps = {
@@ -36,7 +36,7 @@ function classes(variant: Variant, size: Size, className = "") {
 
 function Arrow() {
   return (
-    <ArrowRight aria-hidden="true" className="size-4" />
+    <ArrowRight aria-hidden="true" className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
   );
 }
 

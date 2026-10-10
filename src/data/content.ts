@@ -28,12 +28,21 @@ export const photos = {
 };
 
 export const hero = {
-  eyebrow: "We sell second-hand goods wholesale",
-  title: "Supplier of toys, bric-a-brac, bedding and books.",
+  eyebrow: "Wholesale second-hand goods · Walsall, UK",
+  title: "Supplier of toys, bric-a-brac,",
+  titleAccent: "bedding and books.",
   intro:
     "Sorted and packed in Walsall, UK, and sold by the kilo to importers and wholesalers overseas.",
   primaryCta: { label: "View our products", href: "/#products" },
 };
+
+/** Figures shown in the stats band. All confirmed by the client. */
+export const stats = [
+  { value: 5, label: "Product lines" },
+  { value: 6, label: "Export regions" },
+  { value: 15, suffix: " days", label: "Deposit to collection" },
+  { value: 3, suffix: " yrs", label: "Trading from Walsall" },
+];
 
 export type Product = {
   title: string;

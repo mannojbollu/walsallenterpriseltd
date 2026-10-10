@@ -4,43 +4,46 @@ import { site } from "../data/site";
 import { ButtonLink } from "../components/Button";
 
 /**
- * Full-colour hero: headline on the logo green with a cut-out pile of stock
- * along the bottom edge (the image has a transparent background).
+ * Ivory hero: headline, then a cut-out pile of stock (transparent background)
+ * resting on a soft floor shadow along the bottom edge.
  */
 export function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate flex flex-col overflow-hidden bg-forest-700 pt-16 text-white lg:min-h-svh lg:pt-28"
+      className="relative isolate flex flex-col overflow-hidden bg-paper pt-16 lg:min-h-svh lg:pt-24"
     >
-      <div className="container-page relative z-10 pt-12 sm:pt-16 lg:pt-12 xl:pt-16">
-        <p className="flex animate-fade-in items-center gap-4 font-semibold text-white">
-          <span aria-hidden="true" className="h-0.5 w-10 bg-[#B9DD84]" />
+      {/* Soft light behind the headline and a faint green glow behind the pile */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(60rem_32rem_at_15%_10%,#fff_0%,transparent_70%),radial-gradient(70rem_26rem_at_50%_100%,rgb(185_221_132/0.35)_0%,transparent_70%)]"
+      />
+
+      <div className="container-page pt-12 text-center sm:pt-16 lg:pt-20">
+        <p className="inline-flex animate-fade-in items-center gap-2.5 rounded-full border border-forest-900/15 bg-white/70 px-4 py-1.5 text-sm font-medium text-forest-800 shadow-sm backdrop-blur">
+          <span aria-hidden="true" className="size-1.5 rounded-full bg-moss-500" />
           {hero.eyebrow}
         </p>
-        <h1 className="mt-5 max-w-3xl animate-row-in text-[2.5rem] leading-[1.05] font-extrabold text-white [animation-delay:120ms] sm:text-6xl lg:text-[4.25rem]">
-          {hero.title}
+        <h1 className="mx-auto mt-6 max-w-4xl animate-row-in text-[2.5rem] leading-[1.02] font-extrabold tracking-[-0.02em] [animation-delay:120ms] sm:text-6xl lg:text-[4.75rem]">
+          {hero.title} <span className="text-moss-600">{hero.titleAccent}</span>
         </h1>
-        <p className="mt-6 max-w-xl animate-row-in text-lg leading-relaxed text-forest-100 [animation-delay:240ms]">
+        <p className="mx-auto mt-6 max-w-xl animate-row-in text-lg leading-relaxed text-steel-600 [animation-delay:240ms]">
           {hero.intro}
         </p>
-        <div className="mt-8 flex animate-row-in flex-col gap-3 [animation-delay:360ms] sm:flex-row sm:items-center">
-          <ButtonLink href={hero.primaryCta.href} variant="light" size="lg" arrow>
+        <div className="mt-9 flex animate-row-in flex-col justify-center gap-3 [animation-delay:360ms] sm:flex-row sm:items-center">
+          <ButtonLink href={hero.primaryCta.href} variant="secondary" size="lg" arrow className="shadow-lg shadow-forest-900/20">
             {hero.primaryCta.label}
           </ButtonLink>
-          <ButtonLink href={site.contact.whatsappHref} variant="outline-light" size="lg" className="bg-forest-700">
+          <ButtonLink href={site.contact.whatsappHref} variant="outline" size="lg" className="bg-white/60">
             <MessageCircle aria-hidden="true" className="size-4" />
             WhatsApp us
           </ButtonLink>
         </div>
       </div>
 
-      {/* Pile of stock along the bottom edge, wider than the screen on phones. On short screens it
-          runs off the bottom of the first view, as intended. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none relative mt-auto -mb-px pt-10"
-      >
+      {/* Pile of stock, wider than the screen on phones; rises into place on load */}
+      <div aria-hidden="true" className="pointer-events-none relative mt-auto -mb-px pt-12">
+        <div className="absolute inset-x-[8%] bottom-0 h-1/3 rounded-[50%] bg-forest-900/25 blur-3xl" />
         <img
           src={photos.heroPile.src}
           srcSet={`${photos.heroPile.srcSmall} 1200w, ${photos.heroPile.src} 2400w`}
@@ -49,7 +52,7 @@ export function Hero() {
           width={2400}
           height={636}
           fetchPriority="high"
-          className="relative left-1/2 w-[180%] max-w-none -translate-x-1/2 animate-fade-in [animation-delay:200ms] sm:w-full"
+          className="relative left-1/2 mx-auto w-[180%] max-w-none -translate-x-1/2 animate-rise [animation-delay:450ms] sm:w-full lg:max-w-[110rem]"
         />
       </div>
     </section>

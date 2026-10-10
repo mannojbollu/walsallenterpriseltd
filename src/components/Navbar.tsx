@@ -26,15 +26,15 @@ export function Navbar() {
   const isActive = (href: string) => !href.includes("#") && location.pathname === href;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-forest-700 text-white">
-      <nav aria-label="Main" className="container-page flex h-16 items-center justify-between lg:h-28">
+    <header className="fixed inset-x-0 top-0 z-50 bg-forest-900/95 text-white shadow-[0_1px_0_rgb(255_255_255/0.06),0_8px_24px_-12px_rgb(0_0_0/0.4)] backdrop-blur-md">
+      <nav aria-label="Main" className="container-page flex h-16 items-center justify-between lg:h-24">
         <SmartLink href="/" aria-label={`${site.name} home`} className="shrink-0">
-          <Logo tone="light" className="lg:[&>svg]:h-14" />
+          <Logo tone="light" className="lg:[&>svg]:h-12" />
         </SmartLink>
 
         {/* Desktop: big contact line on top, menu and CTA underneath */}
-        <div className="hidden flex-col items-end gap-3 lg:flex">
-          <div className="flex items-center gap-6 text-lg font-semibold">
+        <div className="hidden flex-col items-end gap-2 lg:flex">
+          <div className="flex items-center gap-6 text-[0.95rem] font-medium text-forest-100">
             <a href={`tel:${site.contact.phoneHref}`} className="inline-flex items-center gap-2 hover:text-[#C8E6A0]">
               <Phone aria-hidden="true" className="size-5" />
               {site.contact.phone}

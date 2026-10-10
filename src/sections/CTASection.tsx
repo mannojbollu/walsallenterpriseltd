@@ -1,5 +1,5 @@
 import { MessageCircle } from "lucide-react";
-import { ctaBand, photos } from "../data/content";
+import { ctaBand } from "../data/content";
 import { site } from "../data/site";
 import { ButtonLink } from "../components/Button";
 import { Reveal } from "../components/Reveal";
@@ -8,38 +8,29 @@ export function CTASection() {
   const secondaryHref = ctaBand.secondaryCta.href === "tel" ? `tel:${site.contact.phoneHref}` : ctaBand.secondaryCta.href;
 
   return (
-    <section aria-labelledby="cta-title" className="relative isolate overflow-hidden bg-forest-950 py-20 sm:py-24 lg:py-28">
-      <img
-        src={photos.boxes.src}
-        alt=""
-        aria-hidden="true"
-        loading="lazy"
-        decoding="async"
-        className="photo absolute inset-0 -z-20 size-full opacity-60"
-      />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(11_39_21/0.95)_30%,rgb(11_39_21/0.55))]" />
-
+    <section aria-labelledby="cta-title" className="bg-white pb-16 sm:pb-20 lg:pb-28">
       <div className="container-page">
-        <Reveal className="grid gap-10 border-l-8 border-moss-500 pl-6 sm:pl-10 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-7">
-            <p className="label text-moss-300">Enquiries</p>
-            <h2 id="cta-title" className="mt-4 text-3xl leading-tight font-bold text-white sm:text-5xl">
-              {ctaBand.title}
-            </h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-steel-200 sm:text-lg">{ctaBand.intro}</p>
-          </div>
-          <div className="flex flex-col gap-3 lg:col-span-5 lg:items-end">
-            <ButtonLink href={ctaBand.primaryCta.href} size="lg" arrow className="w-full sm:w-auto">
+        <Reveal className="relative isolate overflow-hidden rounded-3xl bg-forest-900 px-6 py-14 text-center sm:px-12 sm:py-20">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-[radial-gradient(40rem_18rem_at_50%_0%,rgb(185_221_132/0.22),transparent_70%),radial-gradient(30rem_16rem_at_100%_100%,rgb(79_140_61/0.35),transparent_70%)]"
+          />
+          <h2 id="cta-title" className="mx-auto max-w-2xl text-3xl leading-tight font-bold text-white sm:text-5xl">
+            {ctaBand.title}
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-forest-100 sm:text-lg">{ctaBand.intro}</p>
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+            <ButtonLink href={ctaBand.primaryCta.href} variant="light" size="lg" arrow>
               {ctaBand.primaryCta.label}
             </ButtonLink>
-            <ButtonLink href={site.contact.whatsappHref} variant="outline-light" size="lg" className="w-full sm:w-auto">
+            <ButtonLink href={site.contact.whatsappHref} variant="outline-light" size="lg">
               <MessageCircle aria-hidden="true" className="size-4" />
               WhatsApp us
             </ButtonLink>
-            <a href={secondaryHref} className="font-mono text-sm text-steel-300 underline-offset-4 hover:text-white hover:underline">
-              or call {site.contact.phone}
-            </a>
           </div>
+          <a href={secondaryHref} className="mt-6 inline-block text-sm text-forest-200 underline-offset-4 hover:text-white hover:underline">
+            or call {site.contact.phone}
+          </a>
         </Reveal>
       </div>
     </section>
