@@ -1,16 +1,16 @@
 import { MessageCircle } from "lucide-react";
-import { hero, photos } from "../data/content";
+import { hero } from "../data/content";
 import { site } from "../data/site";
 import { ButtonLink } from "../components/Button";
 
-/** Plain hero: left-aligned headline, then the cut-out pile of stock along the bottom edge. */
+/** Headline on the left, a grid of stock photos on the right (stacked on phones). */
 export function Hero() {
   return (
-    <section id="home" className="flex flex-col overflow-hidden bg-paper pt-16 lg:min-h-svh lg:pt-24">
-      <div className="container-page pt-12 sm:pt-16 lg:pt-20">
-        <div className="max-w-3xl">
+    <section id="home" className="bg-paper pt-16 lg:pt-24">
+      <div className="container-page grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-2 lg:gap-14 lg:py-20">
+        <div>
           <p className="animate-fade-in font-semibold text-moss-700">{hero.eyebrow}</p>
-          <h1 className="mt-4 animate-row-in text-[2.5rem] leading-[1.05] font-extrabold [animation-delay:100ms] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-4 animate-row-in text-[2.4rem] leading-[1.05] font-extrabold [animation-delay:100ms] sm:text-6xl xl:text-7xl">
             {hero.title}
           </h1>
           <p className="mt-6 max-w-xl animate-row-in text-lg leading-relaxed text-steel-600 [animation-delay:200ms]">
@@ -26,20 +26,18 @@ export function Hero() {
             </ButtonLink>
           </div>
         </div>
-      </div>
 
-      {/* Pile of stock: lined up with the text column from tablet up, wider than the screen on phones */}
-      <div aria-hidden="true" className="container-page mt-auto -mb-px pt-12 max-sm:px-0">
-        <img
-          src={photos.heroPile.src}
-          srcSet={`${photos.heroPile.srcSmall} 1200w, ${photos.heroPile.src} 2400w`}
-          sizes="(max-width: 640px) 180vw, 1280px"
-          alt=""
-          width={2400}
-          height={636}
-          fetchPriority="high"
-          className="relative left-1/2 w-[180%] max-w-none -translate-x-1/2 animate-fade-in [animation-delay:300ms] sm:static sm:w-full sm:translate-x-0"
-        />
+        <div className="grid animate-fade-in grid-cols-2 gap-3 [animation-delay:250ms] sm:gap-4">
+          {hero.photos.map((p, i) => (
+            <img
+              key={p.alt}
+              src={p.src}
+              alt={p.alt}
+              fetchPriority={i < 2 ? "high" : undefined}
+              className="photo aspect-[4/3] w-full rounded"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

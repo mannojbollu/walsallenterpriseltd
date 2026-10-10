@@ -17,12 +17,8 @@ import softToysImg from "../assets/photos/soft-toys.webp";
 import beddingImg from "../assets/photos/bedding.webp";
 import booksImg from "../assets/photos/books.webp";
 import mixedImg from "../assets/photos/mixed-load.webp";
-import heroPileImg from "../assets/photos/hero-pile.webp";
-import heroPileSmallImg from "../assets/photos/hero-pile-1200.webp";
 
 export const photos = {
-  /** Generated cut-out (transparent background) of toys, books, bedding and crockery for the hero. */
-  heroPile: { src: heroPileImg, srcSmall: heroPileSmallImg },
   warehouse: { src: warehouseImg, alt: "Warehouse aisle with racked stock and a reach truck" },
   boxes: { src: boxesImg, alt: "Open cardboard cartons ready for packing" },
 };
@@ -33,6 +29,13 @@ export const hero = {
   intro:
     "Sorted and packed in Walsall, UK, and sold by the kilo to importers and wholesalers overseas.",
   primaryCta: { label: "View our products", href: "/#products" },
+  /** Photo grid beside the headline. */
+  photos: [
+    { src: bricImg, alt: "Second-hand crockery, glassware and ornaments" },
+    { src: hardToysImg, alt: "Second-hand toy cars, robots and figures" },
+    { src: booksImg, alt: "Second-hand books stacked by category" },
+    { src: beddingImg, alt: "Stack of folded towels" },
+  ],
 };
 
 export type Product = {
