@@ -28,21 +28,12 @@ export const photos = {
 };
 
 export const hero = {
-  eyebrow: "Wholesale second-hand goods · Walsall, UK",
-  title: "Supplier of toys, bric-a-brac,",
-  titleAccent: "bedding and books.",
+  eyebrow: "Wholesale second-hand goods from Walsall, UK",
+  title: "Supplier of toys, bric-a-brac, bedding and books.",
   intro:
     "Sorted and packed in Walsall, UK, and sold by the kilo to importers and wholesalers overseas.",
   primaryCta: { label: "View our products", href: "/#products" },
 };
-
-/** Figures shown in the stats band. All confirmed by the client. */
-export const stats = [
-  { value: 5, label: "Product lines" },
-  { value: 6, label: "Export regions" },
-  { value: 15, suffix: " days", label: "Deposit to collection" },
-  { value: 3, suffix: " yrs", label: "Trading from Walsall" },
-];
 
 export type Product = {
   title: string;
@@ -52,8 +43,7 @@ export type Product = {
 };
 
 export const productsIntro = {
-  eyebrow: "Our products",
-  title: "Five product lines, sorted and ready to buy.",
+  title: "What we sell",
   intro: "Buy a single line or mix them in one container to the ratio you want. Everything is priced per kilogram.",
 };
 
@@ -97,8 +87,7 @@ export const products: Product[] = [
 ];
 
 export const howToBuy = {
-  eyebrow: "How to buy",
-  title: "Simple terms, one container at a time.",
+  title: "How to buy",
   steps: [
     { title: "Send an enquiry", body: "Tell us the product lines you want. We reply within one business day with per-kg prices." },
     { title: "Pay a 50% deposit", body: "We send a pro-forma invoice. Your order starts when the deposit arrives." },
@@ -113,8 +102,7 @@ export const howToBuy = {
 };
 
 export const about = {
-  eyebrow: "About us",
-  title: "Giving good goods a second life.",
+  title: "About us",
   paragraphs: [
     "Walsall Enterprise Ltd collects household goods the UK no longer wants, sorts and checks them by hand at our warehouse in Walsall, and sells them on to buyers overseas. Every item resold is one that stays out of landfill.",
     "We have been trading for three years and have shipped containers to importers in these regions:",

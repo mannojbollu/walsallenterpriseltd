@@ -26,7 +26,7 @@ export function Navbar() {
   const isActive = (href: string) => !href.includes("#") && location.pathname === href;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-forest-900/95 text-white shadow-[0_1px_0_rgb(255_255_255/0.06),0_8px_24px_-12px_rgb(0_0_0/0.4)] backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 bg-forest-900 text-white">
       <nav aria-label="Main" className="container-page flex h-16 items-center justify-between lg:h-24">
         <SmartLink href="/" aria-label={`${site.name} home`} className="shrink-0">
           <Logo tone="light" className="lg:[&>svg]:h-12" />
