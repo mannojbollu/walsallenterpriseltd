@@ -1,5 +1,5 @@
 import { site } from "../data/site";
-import { commodities } from "../data/content";
+import { products } from "../data/content";
 import { Logo } from "./Logo";
 import { SmartLink } from "./SmartLink";
 import { MessageCircle } from "lucide-react";
@@ -8,7 +8,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t-4 border-moss-600 bg-navy-950 text-steel-300">
+    <footer className="border-t-4 border-moss-600 bg-forest-950 text-steel-300">
       <div className="container-page pt-16 pb-10">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
@@ -42,11 +42,11 @@ export function Footer() {
             </div>
 
             <div>
-              <h2 className="label text-white">Commodities</h2>
+              <h2 className="label text-white">Products</h2>
               <ul className="mt-5 space-y-3 text-sm">
-                {commodities.map((c) => (
+                {products.map((c) => (
                   <li key={c.title}>
-                    <SmartLink href="/#commodities" className="transition-colors hover:text-white">
+                    <SmartLink href="/#products" className="transition-colors hover:text-white">
                       {c.title}
                     </SmartLink>
                   </li>

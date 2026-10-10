@@ -28,7 +28,7 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       {/* Utility bar: desktop only */}
-      <div className="hidden bg-navy-950 text-steel-300 lg:block">
+      <div className="hidden bg-forest-950 text-steel-300 lg:block">
         <div className="container-page flex h-9 items-center justify-between font-mono text-[0.75rem]">
           <p className="truncate uppercase tracking-[0.08em]">{site.tagline}</p>
           <div className="flex items-center divide-x divide-white/15">
@@ -66,8 +66,8 @@ export function Navbar() {
                     aria-current={active ? "page" : undefined}
                     className={`flex h-full items-center border-b-2 px-2.5 text-[0.88rem] xl:px-4 font-medium transition-colors ${
                       active
-                        ? "border-moss-600 text-navy-900"
-                        : "border-transparent text-steel-600 hover:border-steel-300 hover:text-navy-900"
+                        ? "border-moss-600 text-forest-900"
+                        : "border-transparent text-steel-600 hover:border-steel-300 hover:text-forest-900"
                     }`}
                   >
                     {item.label}
@@ -89,7 +89,7 @@ export function Navbar() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex size-11 items-center justify-center text-navy-900 transition-colors hover:bg-steel-100 lg:hidden"
+              className="inline-flex size-11 items-center justify-center text-forest-900 transition-colors hover:bg-steel-100 lg:hidden"
             >
               {open ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
@@ -111,7 +111,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   aria-current={isActive(item.href) ? "page" : undefined}
                   className={`flex items-center gap-4 py-4 text-lg font-semibold ${
-                    isActive(item.href) ? "text-moss-700" : "text-navy-900"
+                    isActive(item.href) ? "text-moss-700" : "text-forest-900"
                   }`}
                 >
                   <span className="font-mono text-xs font-medium text-steel-400">

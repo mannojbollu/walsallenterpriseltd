@@ -8,16 +8,16 @@ export function CTASection() {
   const secondaryHref = ctaBand.secondaryCta.href === "tel" ? `tel:${site.contact.phoneHref}` : ctaBand.secondaryCta.href;
 
   return (
-    <section aria-labelledby="cta-title" className="relative isolate overflow-hidden bg-navy-950 py-20 sm:py-24 lg:py-28">
+    <section aria-labelledby="cta-title" className="relative isolate overflow-hidden bg-forest-950 py-20 sm:py-24 lg:py-28">
       <img
-        src={photos.harbor.src}
+        src={photos.boxes.src}
         alt=""
         aria-hidden="true"
         loading="lazy"
         decoding="async"
         className="photo absolute inset-0 -z-20 size-full opacity-60"
       />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(7_20_34/0.95)_30%,rgb(7_20_34/0.55))]" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(11_39_21/0.95)_30%,rgb(11_39_21/0.55))]" />
 
       <div className="container-page">
         <Reveal className="grid gap-10 border-l-8 border-moss-500 pl-6 sm:pl-10 lg:grid-cols-12 lg:items-end">

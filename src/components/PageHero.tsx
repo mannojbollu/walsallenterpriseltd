@@ -3,14 +3,14 @@ import { SmartLink } from "./SmartLink";
 
 type Props = { eyebrow: string; title: string; intro?: ReactNode; crumb: string; image?: string };
 
-/** Compact navy header used at the top of inner pages (Contact, legal pages). */
+/** Compact dark green header used at the top of inner pages (Contact, legal pages). */
 export function PageHero({ eyebrow, title, intro, crumb, image }: Props) {
   return (
-    <section className="relative isolate overflow-hidden border-b-4 border-moss-600 bg-navy-900 pt-28 pb-14 text-white sm:pb-16 lg:pt-36">
+    <section className="relative isolate overflow-hidden border-b-4 border-moss-600 bg-forest-900 pt-28 pb-14 text-white sm:pb-16 lg:pt-36">
       {image && (
         <>
           <img src={image} alt="" aria-hidden="true" className="photo absolute inset-0 -z-20 size-full animate-kenburns" />
-          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-navy-950/80" />
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-forest-950/80" />
         </>
       )}
       <div className="container-page">

@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import { CircleAlert, LoaderCircle } from "lucide-react";
 import { ContactSubmitError, submitContact, type ContactPayload } from "../lib/contactService";
-import { commodities } from "../data/content";
+import { products } from "../data/content";
 import { Button } from "./Button";
 import { SmartLink } from "./SmartLink";
 
@@ -37,7 +37,7 @@ function validate(values: ContactPayload): Errors {
   if (!values.email.trim()) errors.email = "Enter your email address.";
   else if (!EMAIL_RE.test(values.email.trim())) errors.email = "Enter a valid email address.";
   if (values.phone.trim() && !PHONE_RE.test(values.phone.trim())) errors.phone = "Enter a valid phone number.";
-  if (!values.commodity) errors.commodity = "Select a commodity line.";
+  if (!values.commodity) errors.commodity = "Select a product line.";
   if (values.destination.trim().length < 2) errors.destination = "Enter the port or city of discharge.";
   if (values.message.trim().length < 20)
     errors.message = "Add quantity, container size or grade requirements (at least 20 characters).";
@@ -113,7 +113,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div ref={successRef} tabIndex={-1} role="status" className="border-l-4 border-navy-900 py-6 pl-6 outline-none">
+      <div ref={successRef} tabIndex={-1} role="status" className="border-l-4 border-forest-900 py-6 pl-6 outline-none">
         <p className="label text-moss-700">Enquiry received</p>
         <h3 className="mt-3 text-2xl font-semibold">Thank you. We will reply within one business day.</h3>
         <p className="mt-3 max-w-md text-steel-600">
@@ -130,8 +130,8 @@ export function ContactForm() {
   const show = (f: Field) => (touched[f] ? errors[f] : undefined);
 
   const inputClass = (f: Field) =>
-    `block w-full border-0 border-b-2 bg-transparent px-0 py-2.5 text-base text-navy-900 placeholder:text-steel-400 outline-none transition-colors disabled:opacity-60 ${
-      show(f) ? "border-red-600 focus:border-red-700" : "border-steel-300 hover:border-steel-400 focus:border-navy-900"
+    `block w-full border-0 border-b-2 bg-transparent px-0 py-2.5 text-base text-forest-900 placeholder:text-steel-400 outline-none transition-colors disabled:opacity-60 ${
+      show(f) ? "border-red-600 focus:border-red-700" : "border-steel-300 hover:border-steel-400 focus:border-forest-900"
     }`;
 
   const label = (f: Field, text: string, required = true) => (
@@ -206,13 +206,13 @@ export function ContactForm() {
       </fieldset>
 
       <fieldset className="mt-12">
-        <legend className="label mb-5 text-moss-700">B. Shipment</legend>
+        <legend className="label mb-5 text-moss-700">B. Your order</legend>
         <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2">
           <div>
-            {label("commodity", "Commodity line")}
+            {label("commodity", "Product line")}
             <select {...aria("commodity")}>
               <option value="">Select…</option>
-              {commodities.map((c) => (
+              {products.map((c) => (
                 <option key={c.title} value={c.title}>
                   {c.title}
                 </option>
@@ -261,7 +261,7 @@ export function ContactForm() {
       <div className="mt-12 flex flex-col-reverse gap-5 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs leading-relaxed text-steel-500 sm:max-w-xs">
           We use these details only to reply to your enquiry. See our{" "}
-          <SmartLink href="/privacy" className="underline underline-offset-2 hover:text-navy-900">
+          <SmartLink href="/privacy" className="underline underline-offset-2 hover:text-forest-900">
             privacy policy
           </SmartLink>
           .

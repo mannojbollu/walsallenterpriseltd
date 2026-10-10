@@ -1,13 +1,9 @@
 import { seo } from "../data/site";
 import { Seo } from "../components/Seo";
 import { Hero } from "../sections/Hero";
+import { Products } from "../sections/Products";
+import { HowToBuy } from "../sections/HowToBuy";
 import { About } from "../sections/About";
-import { Reuse } from "../sections/Reuse";
-import { Services } from "../sections/Services";
-import { Gallery } from "../sections/Gallery";
-import { Process } from "../sections/Process";
-import { FAQ } from "../sections/FAQ";
-import { Ports } from "../sections/Ports";
 import { CTASection } from "../sections/CTASection";
 
 export default function HomePage() {
@@ -15,13 +11,9 @@ export default function HomePage() {
     <>
       <Seo {...seo.home} />
       <Hero />
+      <Products />
+      <HowToBuy />
       <About />
-      <Reuse />
-      <Services />
-      <Gallery />
-      <Process />
-      <Ports />
-      <FAQ />
       <CTASection />
     </>
   );

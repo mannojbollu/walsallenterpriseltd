@@ -2,7 +2,7 @@
 
 /*
  * Brand tokens. Change these to rebrand the whole site.
- * navy-*  : maritime navy (hero, dark bands, headings, footer)
+ * forest-* : deep logo greens (hero, dark bands, headings, footer)
  * moss-*  : reuse / recycling green (primary buttons, labels, data marks)
  * kraft-* : recycled-cardboard neutrals (warm surfaces, stamps)
  * steel-* : cool neutrals (body text, borders, table rules)
@@ -17,17 +17,17 @@
   /* Container-door stencil, used sparingly for big codes and numbers. */
   --font-stencil: "Saira Stencil One", "Archivo", ui-sans-serif, sans-serif;
 
-  --color-navy-50: #f1f4f8;
-  --color-navy-100: #dfe6ef;
-  --color-navy-200: #bccada;
-  --color-navy-300: #8ea5bf;
-  --color-navy-400: #5c7a9c;
-  --color-navy-500: #3d5c80;
-  --color-navy-600: #284766;
-  --color-navy-700: #1c3651;
-  --color-navy-800: #13273d;
-  --color-navy-900: #0b1f33;
-  --color-navy-950: #071422;
+  --color-forest-50: #f0f6f1;
+  --color-forest-100: #dbeadf;
+  --color-forest-200: #b7d4bf;
+  --color-forest-300: #88b596;
+  --color-forest-400: #5a9068;
+  --color-forest-500: #3a7449;
+  --color-forest-600: #2a6a3e;
+  --color-forest-700: #1d5c34; /* logo background */
+  --color-forest-800: #174a2a;
+  --color-forest-900: #123a21; /* logo ink */
+  --color-forest-950: #0b2715;
 
   /* Reuse green. 600+ for text on light surfaces and for white-on-green (contrast). */
   --color-moss-50: #f0f6ee;
@@ -136,7 +136,7 @@
   h2,
   h3,
   h4 {
-    @apply font-display text-navy-900;
+    @apply font-display text-forest-900;
     font-stretch: 88%;
     letter-spacing: -0.01em;
     text-wrap: balance;

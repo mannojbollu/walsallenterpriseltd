@@ -14,7 +14,7 @@ export function SectionHeading({ eyebrow, title, intro, tone = "light", classNam
   return (
     <Reveal
       className={`grid gap-4 border-t pt-6 lg:grid-cols-12 lg:gap-10 ${
-        dark ? "border-white/20" : "border-navy-900"
+        dark ? "border-white/20" : "border-forest-900"
       } ${className}`}
     >
       <p className={`label lg:col-span-3 ${dark ? "text-moss-400" : "text-moss-700"}`}>{eyebrow}</p>

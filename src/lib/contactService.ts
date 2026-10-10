@@ -18,7 +18,7 @@ export type ContactPayload = {
   company: string;
   email: string;
   phone: string;
-  /** Commodity line of interest (see `commodities` in src/data/content.ts). */
+  /** Product line of interest (see `products` in src/data/content.ts). */
   commodity: string;
   /** Port or city of discharge. */
   destination: string;

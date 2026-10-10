@@ -34,7 +34,7 @@ const copy: Record<Kind, { title: string; crumb: string; sections: Section[] }> 
         heading: "Information we collect",
         body: ["We only collect the personal data you choose to give us, or that is needed to run this website:"],
         list: [
-          "Enquiry form: your name, email address, and optionally your company and phone number, plus the commodity, destination port, trade terms and message you send.",
+          "Enquiry form: your name, email address, and optionally your company and phone number, plus the product, destination port, trade terms and message you send.",
           "Email, phone and WhatsApp: your contact details and whatever you include in your message.",
           "Technical data: when you visit, our hosting provider processes your IP address and basic browser information to deliver the site and protect it from abuse. We do not use analytics or advertising cookies.",
         ],
@@ -191,7 +191,7 @@ export default function LegalPage({ kind }: { kind: Kind }) {
               </div>
             ))}
             <p className="text-steel-600">
-              Questions? <SmartLink href="/contact" className="font-semibold text-moss-700 hover:text-navy-900">Contact us</SmartLink>.
+              Questions? <SmartLink href="/contact" className="font-semibold text-moss-700 hover:text-forest-900">Contact us</SmartLink>.
             </p>
           </div>
         </div>

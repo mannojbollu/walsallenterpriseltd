@@ -11,10 +11,10 @@ export const site = {
   /** Short form, used in the logo lockup. */
   shortName: "Walsall",
   /** Second line of the logo lockup. */
-  logoSuffix: "Enterprise",
-  tagline: "Wholesale used goods, exported by the container",
+  logoSuffix: "Enterprise Ltd",
+  tagline: "Wholesale second-hand goods, sold by the kilo",
   description:
-    "Walsall Enterprise Ltd sorts, grades and packs used bric-a-brac, toys, bedding and books in Walsall, UK, and ships them as full container loads to importers in the Philippines, Thailand, Pakistan, Europe and Africa. Priced per kg.",
+    "Walsall Enterprise Ltd sells sorted second-hand bric-a-brac, hard and soft toys, bedding and books wholesale, by the kilo, from our warehouse in Walsall, UK.",
 
   /** Public URL of the deployed site, used for canonical and Open Graph URLs. */
   url: "https://walsallenterpriseltd.walsall-enterprise-ltd.workers.dev",
@@ -49,12 +49,9 @@ export const site = {
    * the home page; everything else is a normal route.
    */
   nav: [
-    { label: "Operations", href: "/#operations" },
-    { label: "Reuse", href: "/#reuse" },
-    { label: "Commodities", href: "/#commodities" },
-    { label: "Process", href: "/#process" },
-    { label: "Destinations", href: "/#ports" },
-    { label: "FAQ", href: "/#faq" },
+    { label: "Products", href: "/#products" },
+    { label: "How to buy", href: "/#how-to-buy" },
+    { label: "About", href: "/#about" },
     { label: "Contact", href: "/contact" },
   ],
 

@@ -11,7 +11,7 @@ function Detail({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="py-4">
       <dt className="label text-steel-500">{label}</dt>
-      <dd className="mt-1.5 text-[0.95rem] text-navy-900">{children}</dd>
+      <dd className="mt-1.5 text-[0.95rem] text-forest-900">{children}</dd>
     </div>
   );
 }
@@ -24,10 +24,10 @@ export default function ContactPage() {
       <Seo {...seo.contact} />
       <PageHero
         crumb="Contact"
-        image={photos.crane.src}
+        image={photos.boxes.src}
         eyebrow="Enquiries"
         title="Request a price list or container quote."
-        intro="Tell us the commodity lines, how many 40' containers and your port of discharge. We reply within one business day with per-kg pricing and a proposed load plan."
+        intro="Tell us the product lines, how many 40' containers and your port of discharge. We reply within one business day with per-kg pricing and a proposed load plan."
       />
 
       <section className="grain bg-paper py-14 sm:py-16 lg:py-24">
@@ -43,7 +43,7 @@ export default function ContactPage() {
                 WhatsApp {contact.phone}
               </ButtonLink>
 
-              <dl className="mt-8 divide-y divide-steel-300/70 border-t border-navy-900">
+              <dl className="mt-8 divide-y divide-steel-300/70 border-t border-forest-900">
                 <Detail label="Phone">
                   <a href={`tel:${contact.phoneHref}`} className="font-mono underline-offset-2 hover:underline">
                     {contact.phone}
@@ -74,7 +74,7 @@ export default function ContactPage() {
                     href={contact.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 inline-block text-sm font-semibold text-moss-700 hover:text-navy-900"
+                    className="mt-2 inline-block text-sm font-semibold text-moss-700 hover:text-forest-900"
                   >
                     Directions →
                   </a>

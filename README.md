@@ -28,10 +28,10 @@ Almost everything is centralised. Edit these files instead of hunting through co
 | What                                                             | Where                                     |
 | ---------------------------------------------------------------- | ----------------------------------------- |
 | Company name, contact details, WhatsApp, hours, nav, header CTA, SEO | `src/data/site.ts`                        |
-| Hero, sample manifest, operations spec, commodity schedule, process steps, document pack, port matrix, CTA | `src/data/content.ts` |
-| Colours (navy / reuse green / kraft / steel) and fonts (Archivo, IBM Plex Sans + Mono, Saira Stencil) | `src/styles/index.css` (`@theme` block) |
+| Home page copy: hero, products, how to buy, about (incl. export regions), CTA | `src/data/content.ts` |
+| Colours (forest greens from the logo / moss green / kraft / steel) and fonts (Archivo, IBM Plex Sans + Mono, Saira Stencil) | `src/styles/index.css` (`@theme` block) |
 | Font files (Google Fonts link)                                   | `index.html`                              |
-| Logo                                                             | `src/components/Logo.tsx`, `public/favicon.svg` |
+| Logo (WEL container mark, from the client's logo-final design) | `src/components/Logo.tsx`, `public/favicon.svg`, `public/og-image.jpg` |
 | Default meta tags / Open Graph                                   | `index.html`                              |
 | Contact form backend                                             | `src/lib/contactService.ts` + `.env`      |
 | Privacy / Terms text                                             | `src/pages/LegalPage.tsx`                 |
@@ -43,13 +43,13 @@ The look is flat and structural: no border radius, no drop shadows or glows, 1px
 
 ### Photos and motion
 
-Photos live in `src/assets/photos/` and are wired up in `src/data/content.ts` (`photos` and each commodity's `image`). They are Unsplash stock (Unsplash Licence, free for commercial use, no attribution required). Replace them with the client's own warehouse, stock and loading photos as soon as possible: real photos are the strongest trust signal on the page. Keep files under ~400 KB (WebP, about 1000–1600px wide).
+Photos live in `src/assets/photos/` and are wired up in `src/data/content.ts` (`photos` and each product's `image`). They are Unsplash stock (Unsplash Licence, free for commercial use, no attribution required). Replace them with the client's own warehouse, stock and loading photos as soon as possible: real photos are the strongest trust signal on the page. Keep files under ~400 KB (WebP, about 1000–1600px wide).
 
 Motion is deliberate and limited: slow push-in on hero photos, manifest rows printing in, the scrolling lanes board, door-wipe photo reveals, the rubber stamp, count-up figures, the process progress rail and chart bars. All of it switches off under the visitor's reduced-motion setting.
 
-### Commodities, process, ports
+### Products and buying terms
 
-Edit the `commodities`, `processSteps`, `documents` and `ports` (destination regions) arrays in `src/data/content.ts`. Tables, line numbers, the contact form's commodity dropdown and footer links update automatically. Search the file for `TODO(client)` to find figures that still need confirming.
+Edit `products`, `howToBuy` and `about` in `src/data/content.ts`. The product cards, the contact form's product dropdown and the footer links update automatically.
 
 ### Contact form
 
